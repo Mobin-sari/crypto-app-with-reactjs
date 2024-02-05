@@ -7,6 +7,6 @@ const getCoinList = (page, currency) => {
     `;
 };
 
-const searchCoin = (query) => `${BASE_URL}/serach?query=${query}&x_cg_demo_api_key=${API_KEY}`;
+const searchCoin = (query) => `https://api.coingecko.com/api/v3/search?query=${query}&x_cg_demo_api_key=${API_KEY}`;
 
-export { getCoinList, searchCoin }
+export { getCoinList, searchCoin };
