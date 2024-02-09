@@ -1,11 +1,14 @@
 import chartUp from "../../assets/chart-up.svg"
 import chartDown from "../../assets/chart-down.svg"
 
+import axios from "axios"
+
 import {RotatingLines} from "react-loader-spinner";
 
 import styles from "./tablecoin.module.css"
+import { marketChart } from "../../services/cryproApi";
 
-function TableCoin({ coins, isLoading }) {
+function TableCoin({ coins, isLoading, setChart }) {
     
     return (
         <div className={styles.container}>
@@ -26,7 +29,7 @@ function TableCoin({ coins, isLoading }) {
                     <tbody>
                         {
                             coins.map((coin) => (
-                                <TableRow coin={coin} key={coin.id}/>
+                                <TableRow coin={coin} key={coin.id} setChart={setChart}/>
                             ))
                         }
                     </tbody>
@@ -39,20 +42,31 @@ function TableCoin({ coins, isLoading }) {
 
 export default TableCoin;
 
-const TableRow = ({
-    coin: {
-        name,
-        image,
-        symbol,
-        total_volume,
-        current_price,
-        price_change_percentage_24h,
-    }
-}) => {
+const TableRow = ({ coin, setChart }) => {
+    const {
+            id,
+            name,
+            image,
+            symbol,
+            total_volume,
+            current_price,
+            price_change_percentage_24h
+    } = coin;
+    const showHandler = async () => {
+
+        try {
+            const res = await fetch(marketChart(id));
+            const json = await res.json()
+            setChart(json);
+        } catch (error) {
+            setChart(null)
+        }
+    };
+
     return (
         <tr>
             <td>
-                <div className={styles.symbol}>
+                <div className={styles.symbol} onClick={showHandler}>
                     <img src={image} alt={symbol} />
                     <span>{symbol.toUpperCase()}</span>
                 </div>
