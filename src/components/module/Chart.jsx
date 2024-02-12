@@ -7,6 +7,7 @@ import {
   Line,
   LineChart,
   ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
@@ -22,7 +23,7 @@ function Chart({ chart, setChart }) {
         setType(type)
     }
   }
-
+  
   return (
     <div className={styles.container}>
       <span className={styles.cross} onClick={() => setChart(null)}>
@@ -72,8 +73,9 @@ const ChartComponent = ({ data, type }) => {
           strokeWidth="2px"
         />
         <CartesianGrid stroke="#404042" />
-        <YAxis dataKey={type} domain={["auto", "auto"]} />
         <XAxis dataKey="data" hide />
+        <YAxis dataKey={type} domain={["auto", "auto"]} />
+        <Tooltip />
         <Legend />
       </LineChart>
     </ResponsiveContainer>
