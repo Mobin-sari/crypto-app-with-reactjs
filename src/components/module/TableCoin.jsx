@@ -9,6 +9,7 @@ import styles from "./tablecoin.module.css";
 
 import { marketChart } from "../../services/cryproApi";
 import { container } from "../../helper/framerMotion";
+import { shrterPrice } from "../../helper/shorter";
 
 function TableCoin({ coins, isLoading, setChart }) {
   return (
@@ -58,6 +59,8 @@ const TableRow = ({ coin, setChart }) => {
     try {
       const res = await fetch(marketChart(id));
       const json = await res.json();
+      shrterPrice(json)
+      console.log(json)
       setChart({ ...json, coin });
     } catch (error) {
       setChart(null);

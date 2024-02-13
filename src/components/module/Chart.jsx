@@ -3,7 +3,6 @@ import { converData } from "../../helper/convertData";
 
 import {
   CartesianGrid,
-  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -40,7 +39,7 @@ function Chart({ chart, setChart }) {
         <div className={styles.types} onClick={typeHandler}>
           <button className={type === "prices" ? styles.selected : null}>Prices</button>
           <button className={type === "market_caps" ? styles.selected : null}>Market Caps</button>
-          <button className={type === "total_volume" ? styles.selected : null}>Total Volumes</button>
+          <button className={type === "total_volumes" ? styles.selected : null}>Total Volumes</button>
         </div>
         <div className={styles.details}>
           <div>
@@ -75,8 +74,7 @@ const ChartComponent = ({ data, type }) => {
         <CartesianGrid stroke="#404042" />
         <XAxis dataKey="data" hide />
         <YAxis dataKey={type} domain={["auto", "auto"]} />
-        <Tooltip />
-        <Legend />
+        {type === "prices" && <Tooltip />}
       </LineChart>
     </ResponsiveContainer>
   );

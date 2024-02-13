@@ -1,24 +1,33 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #3874ff;
-    padding: 10px 20px;
-    margin-bottom: 150px;
-    border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3874ff;
+  padding: 10px 20px;
+  margin-bottom: 150px;
+  border-radius: 10px;
+  font-family: PlayfairDisplay;
 }
 
 .header a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: 600;
-    font-size: 1.1rem;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.8rem;
+  font-family: PlayfairDisplay;
 }
 
 .footer {
-    text-align: center;
-    background-color: #3874ff;
-    padding: 20px;
-    margin-top: 80px;
-    border-radius: 10px;
+  text-align: center;
+  background-color: #3874ff;
+  padding: 20px;
+  margin-top: 80px;
+  border-radius: 10px;
+  font-family: PlayfairDisplay;
+  font-size: 1.5rem;
+}
+
+@font-face {
+  font-family: PlayfairDisplay;
+  src: url(../fonts/PlayfairDisplaySC-BoldItalic.otf);
 }

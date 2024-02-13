@@ -18,14 +18,15 @@
 .table tbody tr {
   height: 80px;
   border-bottom: 1px solid #22262e;
-  font-weight: 600;
   font-size: 1.1rem;
+  font-family: cooper;
 }
 
 .table th {
-    font-size: 1.2rem;
-    text-align: left;
-    padding: 10px 0;
+  font-size: 1.15rem;
+  text-align: left;
+  padding: 10px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular';
 }
 
 .symbol {
@@ -64,3 +65,9 @@
     padding: 0 10px;
   }
 }
+
+@font-face {
+  font-family: cooper;
+  src: url(../../fonts/CooperHewitt-Thin.otf);
+}
+

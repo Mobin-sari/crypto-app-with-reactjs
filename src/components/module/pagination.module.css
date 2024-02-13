@@ -16,14 +16,18 @@
     padding: 5px 10px;
     font-size: 1rem;
     cursor: pointer;
+    font-family: CaviarDreams;
 }
 
 .pagination p {
     display: inline-block;
     border: 1px solid #3874ff;
-    width: 25px;
+    width: 30px;
     text-align: center;
+    justify-content: center;
     border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: CaviarDreams;
 }
 
 .disabled {
@@ -32,4 +36,9 @@
 
 .selected {
     background-color: #3874ff;
+}
+
+@font-face {
+    font-family: CaviarDreams;
+    src: url(../../fonts/CaviarDreams.ttf);
 }
